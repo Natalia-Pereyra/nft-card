@@ -1,38 +1,129 @@
-.App {
+:root {
+  --main-bg-color: hsl(217, 54%, 11%);
+  --card-bg-color: hsl(216, 50%, 16%);
+  --line-dark-blue: hsl(215, 32%, 27%);
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --font: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: var(--font);
+  color: white;
+  font-size: 16px;
+}
+
+p {
+  color: var(--soft-blue);
+}
+
+h1 {
+  font-size: 27px;
+}
+
+h1:hover {
+  color: var(--cyan);
+}
+
+#card-container {
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  margin: 100px 10px;
+  border-radius: 10px;
+}
+
+#overlay-container {
+  position: relative;
+}
+
+#overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 98.7%;
+  /*  100% was too large, why?*/
+  width: 100%;
+  border-radius: 10px;
+  background-color: hsl(178, 100%, 50%, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#overlay:hover {
+  opacity: 1;
+}
+
+#card-img {
+  max-width: 316px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+#main-img {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#ethereum-icon {
+  max-width: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#clock-icon {
+  max-width: 18px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+section {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+#flex-div {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+}
+
+#days-left {
+  width: 90px;
+}
+
+span {
+  color: var(--cyan);
+  font-weight: 600;
+  padding: 5px;
+}
+
+#avatar-flex {
+  display: flex;
+  align-items: center;
+}
+
+#avatar-img {
+  height: 25px;
+  width: auto;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+strong {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+strong:hover {
+  color: var(--cyan);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+hr {
+  border: 0.5px solid var(--soft-blue);
+}
+
+@media screen and (min-width: 375px) {
+  #card-container {
+    max-width: 310px;
+    margin: 150px auto;
   }
 }
